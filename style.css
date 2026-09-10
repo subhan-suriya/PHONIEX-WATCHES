@@ -1,140 +1,60 @@
-.footer {
-    background: #fcfafa;
-    color: white;
-    padding: 50px 8% 20px;
-    margin-top: 60px;
-}
-
-/* Main Footer */
-
-.footer-box {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-/* Brand */
-
-.footer-brand h2 {
-    color: #d4af37;
-    margin-bottom: 10px;
-}
-
-.footer-brand p {
-    color: #aaa;
-}
-
-/* Headings */
-
-.footer h3 {
-    color: #d4af37;
-    margin-bottom: 15px;
-}
-
-/* Links */
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.footer-links a {
-    color: #aaa;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    color: #d4af37;
-}
-
-/* Contact */
-
-.footer-contact p {
-    color: #aaa;
-    margin: 8px 0;
-}
-
-/* Bottom */
-
-.footer-bottom {
-    border-top: 1px solid #333;
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-}
-
-.footer-bottom p {
-    color: #777;
-    font-size: 13px;
-}
-
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .footer-box {
-        flex-direction: column;
-    }
-
-}
- /* FOOTER */
-
-    .footer-container {
-        width: calc(100% - 30px);
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .footer-col {
-        width: 100%;
-        flex: none;
-    }
-
-    .footer-col p {
-        font-size: 13px;
-    }
 
 /* =========================================
-   FOOTER
+   PHONIEX WATCHES FOOTER
 ========================================= */
 
 .site-footer {
     width: 100%;
-    background-color: #fdf8f8;
+    background: #fdf8f8;
     color: #080808;
-    padding: 40px 0 20px;
-    font-family: sans-serif;
+    padding: 50px 0 20px;
+    margin-top: 60px;
+    font-family: Arial, sans-serif;
 }
 
 .footer-container {
     width: min(1200px, calc(100% - 40px));
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
     margin: 0 auto;
-    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
 }
 
 .footer-col {
-    flex: 1 1 300px;
+    flex: 1 1 0;
     min-width: 0;
-    margin-bottom: 20px;
 }
+
+/* Logo */
 
 .footer-col img {
+    width: 180px;
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
-.footer-col h3,
+/* Footer heading */
+
 .footer-col h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
     color: #0d0d0d;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 20px;
 }
+
+/* Paragraph */
+
+.footer-col p {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* List */
 
 .footer-col ul {
     list-style: none;
@@ -143,78 +63,117 @@
 }
 
 .footer-col ul li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-.footer-col ul li a,
-.footer-col p {
-    color: #101010;
+/* Links */
+
+.footer-col ul li a {
+    color: #333;
     text-decoration: none;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
     overflow-wrap: anywhere;
+    transition: 0.3s ease;
 }
+
+.footer-col ul li a:hover {
+    color: #d4af37;
+}
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
 
 .footer-bottom {
     width: 100%;
+    margin-top: 35px;
+    padding: 20px 20px 0;
+
+    border-top: 1px solid #d5d5d5;
+
     text-align: center;
-    border-top: 1px solid #333;
-    padding: 15px 20px 0;
-    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #777;
     font-size: 13px;
-    color: #111;
 }
 
-/* Desktop */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
+/* =========================================
+   TABLET
+========================================= */
 
-/* Images responsive */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Mobile */
 @media (max-width: 768px) {
 
-    .container {
-        width: 92%;
+    .site-footer {
+        padding: 40px 0 20px;
     }
 
-    h1 {
-        font-size: 32px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    .navbar {
+    .footer-container {
+        width: calc(100% - 40px);
         flex-direction: column;
+        gap: 30px;
     }
 
-    .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
+    .footer-col {
+        width: 100%;
+        flex: none;
+    }
+
+    .footer-col img {
+        width: 160px;
+    }
+
+    .footer-col h2 {
+        font-size: 19px;
     }
 }
 
-/* Very small phones */
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 480px) {
 
-    .products {
-        grid-template-columns: 1fr;
+    .site-footer {
+        padding: 35px 0 15px;
+        margin-top: 40px;
     }
 
-    h1 {
-        font-size: 27px;
+    .footer-container {
+        width: calc(100% - 30px);
+        gap: 25px;
     }
 
-    .container {
-        width: 94%;
+    .footer-col img {
+        width: 145px;
+    }
+
+    .footer-col h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .footer-col p {
+        font-size: 13px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        margin-top: 25px;
+        padding: 15px 10px 0;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
     }
 }
