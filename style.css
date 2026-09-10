@@ -1,58 +1,24 @@
 
-/* =========================================
-   PHONIEX WATCHES
-   RESPONSIVE STYLE
-========================================= */
-
 * {
     box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #ffffff;
-    color: #111;
-}
-
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar {
     width: 100%;
+    overflow-x: hidden;
 }
-
-.navbar-brand {
-    white-space: nowrap;
-}
-
-.navbar .form-control {
-    max-width: 220px;
-}
-
-.navbar .btn {
-    white-space: nowrap;
-}
-
-
-/* =========================================
-   HERO VIDEO
-========================================= */
 
 .hero-video {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     padding: 20px;
 }
 
@@ -62,13 +28,7 @@ body {
     aspect-ratio: 16 / 9;
     height: auto;
     border: 0;
-    display: block;
 }
-
-
-/* =========================================
-   SECTIONS
-========================================= */
 
 .section {
     width: 100%;
@@ -79,14 +39,8 @@ body {
 .section-title {
     text-align: center;
     color: red;
-    margin: 0 0 30px;
-    font-weight: 700;
+    margin-bottom: 30px;
 }
-
-
-/* =========================================
-   CATEGORY
-========================================= */
 
 .category-grid {
     width: 100%;
@@ -102,13 +56,7 @@ body {
     height: 500px;
     max-width: 100%;
     object-fit: cover;
-    display: block;
 }
-
-
-/* =========================================
-   PRODUCTS
-========================================= */
 
 .products-grid {
     width: 100%;
@@ -122,37 +70,22 @@ body {
 .product-card {
     width: 18rem;
     max-width: 100%;
-    overflow: hidden;
 }
 
 .product-card img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
 }
 
 .product-card .card-body {
     text-align: center;
 }
 
-.product-card .btn {
-    margin-top: 5px;
-}
-
-
-/* =========================================
-   PREMIUM BOX
-========================================= */
-
-.premium-section {
-    width: 100%;
-}
-
 .premium-section .carousel {
     width: 100%;
     max-width: 1059px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .premium-section .carousel img {
@@ -161,23 +94,17 @@ body {
     display: block;
 }
 
-
-/* =========================================
-   FOOTER
-========================================= */
-
 .site-footer {
     width: 100%;
     background: #111;
-    color: white;
+    color: #fff;
     padding: 50px 20px 0;
-    overflow: hidden;
 }
 
 .footer-container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -197,14 +124,6 @@ body {
     margin-bottom: 15px;
 }
 
-.footer-col h2 {
-    margin-top: 0;
-}
-
-.footer-col p {
-    margin: 0;
-}
-
 .footer-col ul {
     list-style: none;
     padding: 0;
@@ -217,16 +136,11 @@ body {
 }
 
 .footer-col a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
-.footer-col a:hover {
-    text-decoration: underline;
-}
-
 .footer-bottom {
-    width: 100%;
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
@@ -237,13 +151,7 @@ body {
     margin: 0;
 }
 
-
-/* =========================================
-   TABLET
-========================================= */
-
 @media (max-width: 1100px) {
-
     .products-grid {
         gap: 40px;
     }
@@ -257,56 +165,16 @@ body {
         height: auto;
         aspect-ratio: 1 / 1;
     }
-
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
 @media (max-width: 768px) {
-
-    .section {
-        padding: 30px 15px;
-    }
-
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-
-    /* Navbar */
-
-    .navbar .form-control {
-        max-width: none;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar form {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar form .btn {
-        width: 100%;
-        margin-top: 8px;
-    }
-
-    /* Hero */
-
     .hero-video {
         padding: 10px;
     }
 
-    .hero-video iframe {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
+    .section {
+        padding: 30px 15px;
     }
-
-    /* Categories */
 
     .category-grid {
         flex-direction: column;
@@ -320,8 +188,6 @@ body {
         aspect-ratio: 1 / 1;
     }
 
-    /* Products */
-
     .products-grid {
         gap: 25px;
     }
@@ -331,18 +197,26 @@ body {
         max-width: 320px;
     }
 
-    /* Premium */
+    .search-form {
+        width: 100%;
+        margin-top: 10px;
+        flex-direction: column;
+    }
 
-    .premium-section .carousel {
+    .search-form .form-control {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 8px;
+    }
+
+    .search-form .btn {
         width: 100%;
     }
 
-    /* Footer */
-
     .footer-container {
         flex-direction: column;
-        gap: 35px;
         text-align: center;
+        gap: 35px;
     }
 
     .footer-col {
@@ -353,60 +227,32 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
-
 }
 
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
 @media (max-width: 480px) {
-
     .section {
         padding: 25px 10px;
     }
 
     .section-title {
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .hero-video {
         padding: 5px;
     }
 
-    .products-grid {
-        gap: 20px;
+    .product-card {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .product-card {
-        max-width: 100%;
+    .premium-section .carousel {
+        width: 100%;
     }
 
     .footer-col h2 {
         font-size: 22px;
     }
-
 }
 
-
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
-
-@media (max-width: 360px) {
-
-    .section-title {
-        font-size: 21px;
-    }
-
-    .product-card {
-        width: 100%;
-    }
-
-    .site-footer {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-}
