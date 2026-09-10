@@ -1,0 +1,735 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | Phoenix Watches</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.10), transparent 30%),
+                linear-gradient(135deg, #050505, #111111, #050505);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            color: white;
+            padding: 20px;
+        }
+
+
+        /* =========================
+           FLOATING BACKGROUND
+        ========================= */
+
+        .circle {
+            position: fixed;
+            border-radius: 50%;
+
+            border: 1px solid rgba(212, 175, 55, 0.12);
+
+            animation: float 8s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+        .circle.one {
+            width: 220px;
+            height: 220px;
+
+            top: 5%;
+            left: 5%;
+        }
+
+        .circle.two {
+            width: 350px;
+            height: 350px;
+
+            bottom: -100px;
+            right: 5%;
+
+            animation-delay: 2s;
+        }
+
+        .circle.three {
+            width: 120px;
+            height: 120px;
+
+            top: 65%;
+            left: 12%;
+
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(10deg);
+            }
+        }
+
+
+        /* =========================
+           MAIN CARD
+        ========================= */
+
+        .thank-you-card {
+            width: 100%;
+            max-width: 680px;
+
+            background: rgba(15, 15, 15, 0.96);
+
+            border-radius: 24px;
+
+            padding: 55px 45px;
+
+            text-align: center;
+
+            position: relative;
+            z-index: 2;
+
+            border: 1px solid rgba(212, 175, 55, 0.25);
+
+            box-shadow:
+                0 30px 90px rgba(0, 0, 0, 0.65),
+                0 0 50px rgba(212, 175, 55, 0.05);
+
+            animation: cardAppear 0.9s ease forwards;
+        }
+
+        @keyframes cardAppear {
+            0% {
+                opacity: 0;
+                transform:
+                    translateY(50px)
+                    scale(0.92);
+            }
+
+            100% {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================
+           CHECK ICON
+        ========================= */
+
+        .check-container {
+            width: 105px;
+            height: 105px;
+
+            margin: 0 auto 30px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #d4af37,
+                #f4d76b,
+                #b8860b
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            box-shadow:
+                0 0 35px rgba(212, 175, 55, 0.25);
+
+            animation:
+                checkPop 0.7s
+                cubic-bezier(.17,.67,.3,1.4)
+                0.4s both;
+        }
+
+        @keyframes checkPop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .check {
+            width: 43px;
+            height: 23px;
+
+            border-left: 5px solid #080808;
+            border-bottom: 5px solid #080808;
+
+            transform:
+                rotate(-45deg)
+                scale(0);
+
+            animation:
+                drawCheck 0.5s
+                ease 1s forwards;
+        }
+
+        @keyframes drawCheck {
+            0% {
+                transform:
+                    rotate(-45deg)
+                    scale(0);
+            }
+
+            100% {
+                transform:
+                    rotate(-45deg)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .thank-you-card h1 {
+            font-size: 44px;
+
+            margin-bottom: 18px;
+
+            letter-spacing: -1px;
+
+            color: #f5f5f5;
+
+            animation:
+                textAppear
+                0.8s
+                ease
+                0.8s
+                both;
+        }
+
+        .gold {
+            color: #d4af37;
+        }
+
+        @keyframes textAppear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .message {
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #bdbdbd;
+
+            max-width: 520px;
+
+            margin: 0 auto 30px;
+
+            animation:
+                textAppear
+                0.8s
+                ease
+                1s
+                both;
+        }
+
+        .highlight {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           DELIVERY MESSAGE
+        ========================= */
+
+        .delivery-message {
+            font-size: 16px;
+
+            line-height: 1.6;
+
+            color: #d8d8d8;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.08),
+                    rgba(255, 255, 255, 0.03)
+                );
+
+            border: 1px solid rgba(212, 175, 55, 0.12);
+
+            border-radius: 12px;
+
+            padding: 16px 20px;
+
+            margin-bottom: 30px;
+
+            animation:
+                textAppear
+                0.8s
+                ease
+                1.2s
+                both;
+        }
+
+
+        /* =========================
+           ORDER STATUS
+        ========================= */
+
+        .order-status {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 25px 0 35px;
+
+            color: #eeeeee;
+        }
+
+        .status-dot {
+            width: 11px;
+            height: 11px;
+
+            background: #d4af37;
+
+            border-radius: 50%;
+
+            animation: pulse 1.5s infinite;
+
+            box-shadow:
+                0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(212, 175, 55, 0.5);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 12px
+                    rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(212, 175, 55, 0);
+            }
+        }
+
+        .status-text {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            padding: 14px 27px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: all 0.3s ease;
+        }
+
+        .home-btn {
+            background:
+                linear-gradient(
+                    135deg,
+                    #d4af37,
+                    #f4d76b
+                );
+
+            color: #080808;
+
+            box-shadow:
+                0 8px 25px
+                rgba(212, 175, 55, 0.15);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(212, 175, 55, 0.25);
+        }
+
+        .shop-btn {
+            background: transparent;
+
+            color: #d4af37;
+
+            border: 1px solid #d4af37;
+        }
+
+        .shop-btn:hover {
+            background: #d4af37;
+
+            color: #080808;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           BRAND
+        ========================= */
+
+        .brand {
+            margin-top: 35px;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            color: #d4af37;
+
+            text-transform: uppercase;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           GOLD PARTICLES
+        ========================= */
+
+        .confetti {
+            position: fixed;
+
+            width: 7px;
+            height: 13px;
+
+            top: -20px;
+
+            opacity: 0;
+
+            color: #d4af37;
+
+            animation:
+                fall 4s
+                linear
+                infinite;
+
+            z-index: 5;
+        }
+
+        .confetti:nth-child(1) {
+            left: 10%;
+            animation-delay: 0.2s;
+        }
+
+        .confetti:nth-child(2) {
+            left: 25%;
+            animation-delay: 1s;
+        }
+
+        .confetti:nth-child(3) {
+            left: 40%;
+            animation-delay: 0.5s;
+        }
+
+        .confetti:nth-child(4) {
+            left: 60%;
+            animation-delay: 1.5s;
+        }
+
+        .confetti:nth-child(5) {
+            left: 75%;
+            animation-delay: 0.8s;
+        }
+
+        .confetti:nth-child(6) {
+            left: 90%;
+            animation-delay: 1.8s;
+        }
+
+        @keyframes fall {
+            0% {
+                transform:
+                    translateY(-20px)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .thank-you-card {
+                padding: 40px 20px;
+
+                width: 100%;
+
+                border-radius: 20px;
+            }
+
+            .check-container {
+                width: 85px;
+                height: 85px;
+
+                margin-bottom: 25px;
+            }
+
+            .check {
+                width: 36px;
+                height: 20px;
+            }
+
+            .thank-you-card h1 {
+                font-size: 32px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+
+            .delivery-message {
+                font-size: 14px;
+
+                padding: 14px 15px;
+            }
+
+            .order-status {
+                margin: 22px 0 30px;
+            }
+
+            .status-text {
+                font-size: 14px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .brand {
+                font-size: 12px;
+                letter-spacing: 3px;
+            }
+        }
+
+
+        @media (max-width: 380px) {
+
+            .thank-you-card {
+                padding: 32px 16px;
+            }
+
+            .thank-you-card h1 {
+                font-size: 28px;
+            }
+
+            .message {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         FLOATING BACKGROUND
+    ========================= -->
+
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="circle three"></div>
+
+
+    <!-- =========================
+         GOLD PARTICLES
+    ========================= -->
+
+    <div class="confetti">✦</div>
+    <div class="confetti">✦</div>
+    <div class="confetti">✦</div>
+    <div class="confetti">✦</div>
+    <div class="confetti">✦</div>
+    <div class="confetti">✦</div>
+
+
+    <!-- =========================
+         THANK YOU CARD
+    ========================= -->
+
+    <div class="thank-you-card">
+
+
+        <!-- CHECK -->
+
+        <div class="check-container">
+            <div class="check"></div>
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1>
+            Thank <span class="gold">You!</span>
+        </h1>
+
+
+        <!-- MAIN MESSAGE -->
+
+        <p class="message">
+            Your watch has been
+            <span class="highlight">
+                successfully added
+            </span>
+            to your cart.
+        </p>
+
+
+        <!-- DELIVERY MESSAGE -->
+
+        <div class="delivery-message">
+            After your confirmation,
+            your order will be delivered
+            right to your doorstep. 🚚
+        </div>
+
+
+        <!-- ORDER STATUS -->
+
+        <div class="order-status">
+
+            <div class="status-dot"></div>
+
+            <div class="status-text">
+                Your order is ready for confirmation
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <a
+                href="Add to Cart.html"
+                class="btn home-btn">
+                View Cart
+            </a>
+
+
+            <a
+                href="index.html"
+                class="btn shop-btn">
+                Continue Shopping
+            </a>
+
+        </div>
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+            Phoenix Watches
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
+```
