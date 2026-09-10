@@ -1,164 +1,241 @@
+/* =========================================================
+   PHONIEX WATCHES
+   COMPLETE RESPONSIVE CSS
+========================================================= */
 
-/* =========================================
-   RESET
-========================================= */
+/* -------------------------
+   BASIC RESET
+------------------------- */
 
 * {
     box-sizing: border-box;
 }
 
-html,
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-}
-
-body {
-    font-family: Arial, sans-serif;
     background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/* =========================================
+/* =========================================================
    NAVBAR
-========================================= */
+========================================================= */
 
 .navbar {
     width: 100%;
 }
 
 .navbar-brand {
-    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+}
+
+.navbar form {
+    max-width: 100%;
+}
+
+.navbar form input {
+    min-width: 0;
 }
 
 
-/* =========================================
-   HERO VIDEO
-========================================= */
+/* =========================================================
+   YOUTUBE VIDEO
+========================================================= */
 
-.hero-video {
+.video-section {
     width: 100%;
     max-width: 1100px;
     margin: 30px auto;
-    padding: 0 15px;
-}
-
-.hero-video iframe {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    border: 0;
-}
-
-
-/* =========================================
-   SECTIONS
-========================================= */
-
-.section {
-    width: 100%;
-    max-width: 1400px;
-    margin: 45px auto 0;
     padding: 0 20px;
 }
 
-.section-title {
-    text-align: center;
-    color: red;
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-
-/* =========================================
-   CATEGORY IMAGES
-========================================= */
-
-.category-grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.category-grid img {
+.video-section iframe {
     display: block;
     width: 100%;
+    max-width: 1059px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   GENERAL SECTION TITLES
+========================================================= */
+
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin: 35px 0 25px;
+    padding: 0 15px;
+}
+
+.section-title h1 {
+    margin: 0;
+    color: red;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CATEGORY IMAGES
+========================================================= */
+
+.category-images {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto 40px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.category-images img {
+    width: 100%;
+    height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    display: block;
     border-radius: 8px;
 }
 
 
-/* =========================================
-   PRODUCTS
-========================================= */
+/* =========================================================
+   PRODUCTS SECTION
+========================================================= */
 
-.products-grid {
-    width: 100%;
+.products-section {
+    width: min(1250px, calc(100% - 40px));
+    margin: 0 auto 45px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
 
-/* =========================================
-   PRODUCT CARD
-========================================= */
+/* =========================================================
+   PRODUCT CARDS
+========================================================= */
 
-.product-card {
+.products-section .card {
     width: 100% !important;
     max-width: 100%;
+    height: 100%;
     margin: 0;
+
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
     overflow: hidden;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.product-card .card-img-top {
+.products-section .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Product image */
+
+.products-section .card-img-top {
     width: 100%;
-    height: 300px;
+    height: 280px;
+
     object-fit: cover;
+    display: block;
 }
 
-.product-card .card-body {
-    text-align: center;
-    padding: 20px;
+
+/* Product body */
+
+.products-section .card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
-.product-card .card-title {
+.products-section .card-title {
+    margin-bottom: 8px;
+    font-size: 20px;
     font-weight: 700;
 }
 
-.product-card .btn {
+.products-section .card-text {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555555;
+}
+
+
+/* Button */
+
+.products-section .btn {
     width: 100%;
+    margin-top: auto;
 }
 
 
-/* =========================================
-   PREMIUM BOX
-========================================= */
+/* =========================================================
+   BOOTSTRAP BUTTON FIX
+========================================================= */
 
-.premium-section {
-    max-width: 1400px;
+.btn-Danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
 }
+
+.btn-Danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PREMIUM BOX / CAROUSEL
+========================================================= */
 
 #carouselExampleSlidesOnly {
-    width: 100%;
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto 50px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 #carouselExampleSlidesOnly img {
-    display: block;
     width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 
-/* =========================================
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
 
 .site-footer {
     width: 100%;
@@ -166,6 +243,7 @@ body {
     color: #080808;
     padding: 50px 0 20px;
     margin-top: 60px;
+    font-family: Arial, sans-serif;
 }
 
 .footer-container {
@@ -175,11 +253,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
     gap: 60px;
 }
 
 .footer-col {
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
 }
 
@@ -188,19 +267,20 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 20px;
 }
 
 .footer-col h2 {
-    color: #111;
+    color: #0d0d0d;
     font-size: 21px;
-    margin-bottom: 20px;
+    font-weight: 700;
+    margin: 0 0 20px;
 }
 
 .footer-col p {
-    color: #333;
+    color: #333333;
     font-size: 15px;
     line-height: 1.7;
+    margin: 0;
 }
 
 .footer-col ul {
@@ -209,78 +289,84 @@ body {
     margin: 0;
 }
 
-.footer-col li {
+.footer-col ul li {
     margin-bottom: 12px;
 }
 
-.footer-col a {
-    color: #333;
+.footer-col ul li a {
+    color: #333333;
     text-decoration: none;
     font-size: 14px;
     line-height: 1.7;
+
     overflow-wrap: anywhere;
+
+    transition: 0.3s ease;
 }
 
-.footer-col a:hover {
+.footer-col ul li a:hover {
     color: #d4af37;
 }
 
 .footer-bottom {
     width: 100%;
-    text-align: center;
-    border-top: 1px solid #d5d5d5;
     margin-top: 35px;
-    padding: 20px;
+    padding: 20px 20px 0;
+
+    border-top: 1px solid #d5d5d5;
+
+    text-align: center;
 }
 
 .footer-bottom p {
     margin: 0;
-    color: #777;
+    color: #777777;
     font-size: 13px;
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+   769px - 1100px
+========================================================= */
 
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
 
-    .category-grid {
+    .category-images {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .products-grid {
+    .products-section {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
 
-    .product-card .card-img-top {
+    .products-section .card-img-top {
         height: 300px;
     }
 
-    .section-title {
-        font-size: 32px;
-    }
-
     .footer-container {
-        gap: 30px;
+        gap: 35px;
     }
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+   768px AND BELOW
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    /* Navbar */
 
     .navbar {
-        padding: 8px 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .navbar-brand {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .navbar form {
@@ -299,86 +385,73 @@ body {
 
     /* Video */
 
-    .hero-video {
+    .video-section {
         margin: 20px auto;
-        padding: 0 10px;
-    }
-
-
-    /* Sections */
-
-    .section {
-        margin-top: 35px;
         padding: 0 15px;
     }
 
+
+    /* Titles */
+
     .section-title {
-        font-size: 25px;
-        line-height: 1.3;
-        margin-bottom: 22px;
+        margin: 30px 0 20px;
+    }
+
+    .section-title h1 {
+        font-size: 27px;
     }
 
 
     /* Category */
 
-    .category-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .category-grid img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
+    .category-images {
+        width: calc(100% - 30px);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
 
     /* Products */
 
-    .products-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+    .products-section {
+        width: calc(100% - 30px);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
-    .product-card {
-        width: 100% !important;
+    .products-section .card-img-top {
+        height: 240px;
     }
 
-    .product-card .card-img-top {
-        height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
+    .products-section .card-body {
+        padding: 15px;
+    }
+
+    .products-section .card-title {
+        font-size: 18px;
+    }
+
+    .products-section .card-text {
+        font-size: 14px;
     }
 
 
-    /* Premium */
-
-    .premium-section {
-        padding: 0;
-    }
-
-    .premium-section .section-title {
-        padding: 0 15px;
-    }
+    /* Premium Box */
 
     #carouselExampleSlidesOnly {
-        width: 100%;
-    }
-
-    #carouselExampleSlidesOnly img {
-        width: 100%;
-        height: auto;
+        width: calc(100% - 30px);
+        margin-bottom: 35px;
     }
 
 
     /* Footer */
 
     .site-footer {
-        margin-top: 40px;
-        padding: 35px 0 15px;
+        padding: 40px 0 20px;
     }
 
     .footer-container {
-        width: calc(100% - 30px);
+        width: calc(100% - 40px);
         flex-direction: column;
         gap: 30px;
     }
@@ -389,29 +462,120 @@ body {
     }
 
     .footer-col img {
-        width: 150px;
+        width: 160px;
+    }
+
+    .footer-col h2 {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* Navbar */
+
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+
+    /* Titles */
+
+    .section-title {
+        margin: 25px 0 18px;
+    }
+
+    .section-title h1 {
+        font-size: 23px;
+    }
+
+
+    /* Category images - one per row */
+
+    .category-images {
+        width: calc(100% - 30px);
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    /* Products - one per row */
+
+    .products-section {
+        width: calc(100% - 30px);
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .products-section .card-img-top {
+        height: auto;
+        max-height: 400px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+
+    /* Premium */
+
+    #carouselExampleSlidesOnly {
+        width: calc(100% - 30px);
+    }
+
+
+    /* Footer */
+
+    .site-footer {
+        padding: 35px 0 15px;
+        margin-top: 40px;
+    }
+
+    .footer-container {
+        width: calc(100% - 30px);
+        gap: 25px;
+    }
+
+    .footer-col img {
+        width: 145px;
     }
 
     .footer-col h2 {
         font-size: 18px;
+        margin-bottom: 15px;
     }
 
-    .footer-col p,
-    .footer-col a {
+    .footer-col p {
+        font-size: 13px;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
         font-size: 13px;
     }
 
     .footer-bottom {
         margin-top: 25px;
-        padding: 15px 10px;
+        padding: 15px 10px 0;
     }
 
+    .footer-bottom p {
+        font-size: 12px;
+    }
 }
 
 
-/* =========================================
+/* =========================================================
    VERY SMALL PHONES
-========================================= */
+   360px AND BELOW
+========================================================= */
 
 @media (max-width: 360px) {
 
@@ -419,16 +583,58 @@ body {
         font-size: 14px;
     }
 
-    .section-title {
-        font-size: 22px;
+    .section-title h1 {
+        font-size: 21px;
     }
 
-    .section {
-        padding: 0 12px;
+    .products-section .card-body {
+        padding: 13px;
     }
 
-    .product-card .card-body {
-        padding: 16px;
+    .products-section .card-title {
+        font-size: 17px;
     }
 
+    .products-section .card-text {
+        font-size: 13px;
+    }
+
+    .footer-container {
+        width: calc(100% - 24px);
+    }
+}
+
+
+/* =========================================================
+   PREVENT IMAGE OVERFLOW
+========================================================= */
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   PREVENT LONG TEXT FROM BREAKING MOBILE
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   REMOVE HORIZONTAL OVERFLOW
+========================================================= */
+
+.container,
+.container-fluid {
+    max-width: 100%;
 }
